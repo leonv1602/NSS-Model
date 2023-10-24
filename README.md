@@ -1,2 +1,2 @@
 # NSS-Model
-This is my learning repository about Nelvon - Siegel - Svenson Model
+This is my learning repository about Nelson - Siegel - Svenson Model
