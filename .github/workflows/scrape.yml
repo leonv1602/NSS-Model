@@ -2,7 +2,7 @@ name: Run Python Script
 
 on: 
   schedule:
-    - cron: '0 5 * * *' # Will run every day at 5:00 UTC
+    - cron: @daily
 
 jobs:
   build:
@@ -25,3 +25,11 @@ jobs:
     - name: Run Python script
       run: |
         python scrape.py
+
+    - name: Commit and push if it changed
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Action"
+        git add -A
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update Data"
+        git push
