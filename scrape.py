@@ -7,6 +7,7 @@ import openpyxl
 import matplotlib.pyplot as plt
 import re
 import urllib.request
+from weasyprint import HTML
 
 # Define the URL of the website
 url = "https://www.phei.co.id/Data/HPW-dan-Imbal-Hasil"
@@ -58,6 +59,16 @@ try:
     print(f"Folder {sub_path_py_image} created!")
 except FileExistsError:
     print(f"Folder {sub_path_py_image} already exists")
+
+sub_path_pdf = sub_path+'/pdf'
+try:
+    os.makedirs(sub_path_pdf)
+    print(f"Folder {sub_path_pdf} created!")
+except FileExistsError:
+    print(f"Folder {sub_path_pdf} already exists")
+
+# Save as PDF
+HTML(url).write_pdf(f'Scrape PHEI/{clean_date.split("-")[2]}-{clean_date.split("-")[1]}/pdf/{clean_date}.pdf')
 
 # Save image from Website
 img_location_url = text_find[re.search('ChartPic', text_find).start():re.search('ChartPic', text_find).start()+200].split(' ')[0][:-1]
