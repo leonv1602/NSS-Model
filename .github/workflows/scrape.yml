@@ -1,8 +1,8 @@
 name: Run Python Script
 
 on: 
-  pull_request:
-  push:
+  schedule:
+    - cron: '1 0 * * 1-5'
 
 jobs:
   build:
