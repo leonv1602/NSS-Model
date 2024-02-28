@@ -1,8 +1,9 @@
 name: Run Python Script
 
-on: [push, schedule]
-  - cron: '0 10 * * 1-5'
-    
+on: 
+  pull_request:
+  push:
+
 jobs:
   build:
     runs-on: ubuntu-latest
