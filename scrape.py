@@ -19,9 +19,9 @@ df_list = pd.read_html(html_response)
 
 # Find Date in Website
 count = 0
-for i in range(70):
+for i in range(80):
     try :
-        a = text_find[i*800:(i+1)*800].find('<div id="dnn_ctr1477_GovernmentBondBenchmark_idIGSYC_tdTgl">')
+        a = text_find[i*1000:(i+1)*1000].find('<div id="dnn_ctr1477_GovernmentBondBenchmark_idIGSYC_tdTgl">')
         if a != -1:
             save_multiplier = i
             save_first = a
