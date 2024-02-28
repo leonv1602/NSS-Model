@@ -17,21 +17,6 @@ html_response = response.content
 text_find = response.text
 df_list = pd.read_html(html_response)
 
-<<<<<<< HEAD
-# Find Date in Website
-count = 0
-for i in range(80):
-    try :
-        a = text_find[i*1000:(i+1)*1000].find('<div id="dnn_ctr1477_GovernmentBondBenchmark_idIGSYC_tdTgl">')
-        if a != -1:
-            save_multiplier = i
-            save_first = a
-            print(save_first, save_multiplier)
-    except :
-        count +=1
-
-date_yc = text_find[save_first+save_multiplier*1000 :100+save_first+save_multiplier*1000]
-=======
 start_ = re.search('<div id="dnn_ctr1477_GovernmentBondBenchmark_idIGSYC_tdTgl">', text_find).start()
 date_yc = text_find[start_ :100+start_]
 date_yc = date_yc.split(' ')[-2]
