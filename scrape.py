@@ -24,14 +24,11 @@ split = date_yc.find('<')
 clean_date = date_yc[:split]
 clean_date
 
-date_yc = date_yc.split(' ')[-2]
-split = date_yc.find('<')
-clean_date = date_yc[:split]
-
 if int(clean_date.split('-')[0]) < 10:
     cleaner_date = clean_date.split('-')
     cleaner_date[0] = '0' + cleaner_date[0]
     clean_date = '-'.join(cleaner_date)
+clean_date
 
 sub_path = f'Scrape PHEI/{clean_date.split("-")[2]}-{clean_date.split("-")[1]}'
 try:
