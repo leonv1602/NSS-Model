@@ -1,8 +1,7 @@
 name: Run Python Script
 
-on:
-  schedule:
-    - cron: '0 10 * * 1-5'
+on: [push, schedule]
+  - cron: '0 10 * * 1-5'
     
 jobs:
   build:
