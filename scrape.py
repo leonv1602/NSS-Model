@@ -23,7 +23,7 @@ date_yc = date_yc.split(' ')[-2]
 split = date_yc.find('<')
 clean_date = date_yc[:split]
 clean_date
->>>>>>> b2d4c9a (updated algo to search date)
+
 date_yc = date_yc.split(' ')[-2]
 split = date_yc.find('<')
 clean_date = date_yc[:split]
