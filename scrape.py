@@ -30,7 +30,20 @@ if int(clean_date.split('-')[0]) < 10:
     clean_date = '-'.join(cleaner_date)
 clean_date
 
-sub_path = f'Scrape PHEI/{clean_date.split("-")[2]}-{clean_date.split("-")[1]}'
+dict_month_number = {"Januari": "01", 
+                     "Februari": "02", 
+                     "Maret": "03", 
+                     "April": "04", 
+                     "Mei": "05", 
+                     "Juni": "06", 
+                     "Juli": "07", 
+                     "Agustus": "08", 
+                     "September": "09", 
+                     "Oktober": "10", 
+                     "November": "11", 
+                     "Desember": "12",}
+
+sub_path = f'/workspaces/NSS-Model/Scrape PHEI/{clean_date.split("-")[2]}-{dict_month_number.get(clean_date.split("-")[1])}-{clean_date.split("-")[1]}'
 try:
     os.makedirs(sub_path)
     print(f"Folder {sub_path} created!")
